@@ -8,6 +8,8 @@ body::after{content:'';position:fixed;inset:0;z-index:50;pointer-events:none;opa
 img{max-width:100%;display:block}
 .it{font-style:italic}.script{font-family:'Pinyon Script','Snell Roundhand',cursive;font-weight:400;color:var(--bottle)}
 #dust{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+/* touch / swipe petals: above the page and envelope, below the music player, never blocks taps */
+#touchfx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:95}
 main{position:relative;z-index:2}
 .scene{position:relative;overflow:hidden;padding:clamp(4.5rem,12vh,7rem) 1.4rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:1.1rem}
 :focus-visible{outline:2px solid var(--bottle);outline-offset:3px}
@@ -125,6 +127,6 @@ main{position:relative;z-index:2}
 .player.on .eq i{animation:eq 1s ease-in-out infinite}.player.on .eq i:nth-child(2){animation-delay:-.3s}.player.on .eq i:nth-child(3){animation-delay:-.6s}.player.on .eq i:nth-child(4){animation-delay:-.15s}
 @keyframes eq{50%{height:15px}}
 @media(min-width:900px){.sprig{width:clamp(150px,14vw,230px)}.msg .paper{max-width:620px}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv,.wd,.hero-a,.hero-b,.hint,.split span.l{opacity:1;transform:none;filter:none}.st{stroke-dashoffset:0}.lf,.bl2{transform:scale(1)}.tline li::after{transform:none}}
+@media(prefers-reduced-motion:reduce){#touchfx{display:none}*,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv,.wd,.hero-a,.hero-b,.hint,.split span.l{opacity:1;transform:none;filter:none}.st{stroke-dashoffset:0}.lf,.bl2{transform:scale(1)}.tline li::after{transform:none}}
 /* keep photos at their true proportions */
 .ph{width:max-content}.ph img{max-width:none}
